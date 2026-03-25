@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saksham's Personalized Cards</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Mali', cursive;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #eef7ee 0%, #d4ebd0 100%);
+        }
+        
+        .container {
+            background-color: #ffffff;
+            padding: 50px 40px;
+            border-radius: 30px; 
+            border: 6px dashed #9cbfa7; 
+            box-shadow: 0 10px 25px rgba(120, 150, 120, 0.2);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            position: relative; 
+        }
+
+        .floral-corner {
+            position: absolute;
+            font-size: 35px;
+            user-select: none; 
+        }
+        .top-left { top: -20px; left: -20px; transform: rotate(-15deg); }
+        .top-right { top: -20px; right: -20px; transform: rotate(15deg); }
+        .bottom-left { bottom: -20px; left: -20px; transform: rotate(-100deg); }
+        .bottom-right { bottom: -20px; right: -20px; transform: rotate(100deg); }
+
+        h1 {
+            color: #5c8065; 
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #7a9982;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* --- THE NEW COMBINED INPUT WRAPPER --- */
+        .input-wrapper {
+            position: relative;
+            width: 85%;
+            margin: 0 auto 25px auto;
+        }
+
+        /* The text box styles */
+        input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 45px 12px 15px; /* Extra padding on the right so text doesn't hit the icon */
+            font-size: 16px;
+            font-family: 'Mali', cursive;
+            color: #5c8065;
+            border: 3px solid #cce3d0;
+            border-radius: 15px;
+            outline: none;
+            background-color: #fafdfa;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #9cbfa7;
+        }
+
+        /* The hidden calendar that only shows its icon */
+        input[type="date"] {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: transparent;
+            color: transparent; /* Makes the date text invisible */
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* Forces the calendar icon to be clickable and visible */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            opacity: 0.6; /* Softens the icon color a bit */
+            transition: opacity 0.2s;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator:hover {
+            opacity: 1;
+        }
+
+        /* The Submit Button */
+        button {
+            padding: 12px 35px;
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'Mali', cursive;
+            background-color: #f2a6a6; 
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(242, 166, 166, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            background-color: #e89595;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="floral-corner top-left">🌿🌸</div>
+        <div class="floral-corner top-right">🌼🌿</div>
+        <div class="floral-corner bottom-left">🌷🌿</div>
+        <div class="floral-corner bottom-right">🌿🌻</div>
+
+        <h1>Welcome to Saksham's Personalized Cards</h1>
+        <p>Type the date our journey started, or select it from the calendar! 🌿✨</p>
+
+        <div class="input-wrapper">
+            <input type="text" id="dateSelector" placeholder="e.g. 24 Feb 2026">
+            <input type="date" id="calendarPicker" onchange="syncDate()">
+        </div>
+        
+        <button onclick="navigateToCard()">Unlock</button>
+    </div>
+
+    <script>
+        // Formats the calendar selection to look pretty in the text box
+        function syncDate() {
+            const rawDate = document.getElementById('calendarPicker').value;
+            if(rawDate) {
+                const dateObj = new Date(rawDate);
+                const options = { day: 'numeric', month: 'short', year: 'numeric' };
+                document.getElementById('dateSelector').value = dateObj.toLocaleDateString('en-GB', options);
+            }
+        }
+
+        function navigateToCard() {
+            const rawInput = document.getElementById('dateSelector').value;
+
+            if (!rawInput) {
+                alert("Please enter or select a date first! 🌸");
+                return;
+            }
+
+            const parsedDate = new Date(rawInput);
+            
+            if (isNaN(parsedDate.getTime())) {
+                alert("Oops! I couldn't read that format. Try something like '24 Feb 2026' or use the calendar! 🌿");
+                return;
+            }
+
+            const year = parsedDate.getFullYear();
+            const month = String(parsedDate.getMonth() + 1).padStart(2, '0');
+            const day = String(parsedDate.getDate()).padStart(2, '0');
+            
+            const formattedDate = `${year}-${month}-${day}`;
+
+            switch(formattedDate) {
+                case '2024-11-18':
+                    window.location.href = 'siddhi.html'; 
+                    break;
+                case '2025-08-26':
+                    window.location.href = 'garima.html'; 
+                    break;
+                case '2026-02-24':
+                    window.location.href = 'shweta.html'; 
+                    break;
+                default:
+                    window.location.href = 'default_gallery.html';
+            }
+        }
+    </script>
+
+</body>
+</html>

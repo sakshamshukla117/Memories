@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Siddhi 🌻</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Soft yellow background */
+        body {
+            font-family: 'Mali', cursive;
+            margin: 0;
+            padding: 20px;
+            background: radial-gradient(circle at top, #fffef0 0%, #fdf5c9 100%);
+            color: #7a6a4b; /* Warm brownish-gold text */
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        /* The main message box */
+        .message-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px solid #fce47c;
+            box-shadow: 0 8px 20px rgba(220, 200, 100, 0.2);
+        }
+
+        h1 {
+            color: #d4a017;
+            margin-top: 0;
+        }
+
+        /* Grid for the photo gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Styling the individual photos */
+        .photo-card {
+            background-color: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .photo-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover; /* Keeps images beautifully cropped as squares */
+            border-radius: 10px;
+        }
+
+        /* --- THE POP-UP (MODAL) STYLES --- */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Dim the background */
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            max-width: 80%;
+            max-height: 80%;
+            text-align: center;
+            position: relative;
+            animation: popIn 0.3s ease-out;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-img {
+            max-width: 100%;
+            max-height: 50vh;
+            border-radius: 10px;
+        }
+
+        .modal-text {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #5c4d32;
+            font-weight: 600;
+        }
+
+        /* The 'X' to close the pop-up */
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: #ff9e9e;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            line-height: 38px;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 10px 25px;
+            background-color: #fce47c;
+            color: #7a6a4b;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message-box">
+        <h1>To Siddhi 🌻</h1>
+        <p>Hiiii Siddhi<br><br>It's been a longg while since we've been friends. I just wanted to appreciate you, as you've always been an amazing friend to me.<br><br>Sure you dont text me sometimes by yourself (thodi si bkl ho)<br><br>But apart from that, you're a cutieeeeee pieeee and i'm really happy to have you in my life.<br><br>Btw, click on each image below 😋</p>
+    </div>
+
+    <div class="gallery">
+        
+        <div class="photo-card" onclick="openModal('resources/siddhi/s1.jpg', 'This was the day went out together after NBP and had coffee together after Truffle pastry. Itni sexy pastry batayi maine ki tumhe abhi tak pasand hai wo :P. These were the shitty days jab hum gaand ghis ghis ke padhte the, but still, those days are really valuable to me because mujhe tum mili [udne mat lagna ab warna saale bhenkelode wala sticker bhej dunga]')">
+            <img src="resources/siddhi/s1.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s2.jpg', 'This was the day jab hum Gomti se pehli baar travel kiye the saath me :D. im sorry you had to see some PDA but i remember, itni gandi late hone wali train me baithe the. I said that day ki iske baad nahi baithenge kabhi [but baithe uske baad bhi, jab tum dono alekh ke saath the but mai iss gambhir vishay par chuppi saadhna pasand karunga]')">
+            <img src="resources/siddhi/s2.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s3.jpg', 'The first time we talked on FaceTime. You look so weird and cute lmao 😭')">
+            <img src="resources/siddhi/s3.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s4.jpg', 'Cadaveric Oath wala din. Man those were good times jab hum same DH me the. Khair, ab to gaye wo wale din. But i remember hum log saath baithe the, then Waseem Boss ekdum se mujhe aage bhej diye and shit 😭 Maza aata tha yaar jab same DH me the hum log :/')">
+            <img src="resources/siddhi/s4.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s5.jpg', 'Labada Samaroh omg 💐 Our first step towards being bade ameer sexy doctors hehehehehe. ameer ho jayenge phir saath me ghoomenge. Oh wait tum kaha chalogi mere saath 😢')">
+            <img src="resources/siddhi/s5.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s6.jpg', 'No comments, nashe chhod do please. Bad for health [itni cute photo thi, kaise na daalta 😋]')">
+            <img src="resources/siddhi/s6.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s7.jpg', 'Tarang hehheheehehehehe. Life ka pehla College fest. Man i miss those days. Jab subah subah uth ke chale jaate the Audi me. And remember the treasure hunt jisme tum apne Ex ke saath thi, jisse maine breakup kara diya tumhara')">
+            <img src="resources/siddhi/s7.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s8.jpg', 'Of course, Us when New Tea 😋 uss din tum nimbu lag rahi heheheheheehe')">
+            <img src="resources/siddhi/s8.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s9.jpg', 'The day jab Vaidyam gaye the. Well, Garima gussa thi mujhse as usual, but keeping that aside, that was a really good place that you told me about. Yaar wo din wapas chahiye jab tension free hoke bahar ghoomne ja sake 😔')">
+            <img src="resources/siddhi/s9.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s10.jpg', 'Nothing special, bas Maha Chai pe baithe the, jab tum chai pi rahi thi aur mai Sprite. Interestingly enough, Garima iss din bhi mujhse gussa thi. Weird ki aadhe time gussa hi rehti.')">
+            <img src="resources/siddhi/s10.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s11.jpg', 'The day jab Mahi ko leke Hazratganj ghoome the. Cute lag rahi thi iss photo me to laga di yaha, no other reason baccha 😋')">
+            <img src="resources/siddhi/s11.jpg" alt="A memory with Siddhi">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/siddhi/s12.jpg', 'Agar paani peete time itna lock in karti, to padhte time to- baapre 🙏')">
+            <img src="resources/siddhi/s12.jpg" alt="A memory with Siddhi">
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back-btn">⬅ Back to the beginning</a>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal()">&times;</div>
+            <img id="popupImage" class="modal-img" src="" alt="Popup Photo">
+            <div id="popupText" class="modal-text"></div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to make the pop-up work
+        function openModal(imageSource, secretText) {
+            document.getElementById('popupImage').src = imageSource;
+            document.getElementById('popupText').innerText = secretText;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close the pop-up if they click anywhere in the dark background
+        window.onclick = function(event) {
+            var modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
