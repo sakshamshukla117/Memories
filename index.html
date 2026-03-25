@@ -52,18 +52,16 @@
             font-weight: 600;
         }
 
-        /* --- THE NEW COMBINED INPUT WRAPPER --- */
         .input-wrapper {
             position: relative;
             width: 85%;
             margin: 0 auto 25px auto;
         }
 
-        /* The text box styles */
         input[type="text"] {
             width: 100%;
             box-sizing: border-box;
-            padding: 12px 45px 12px 15px; /* Extra padding on the right so text doesn't hit the icon */
+            padding: 12px 45px 12px 15px; 
             font-size: 16px;
             font-family: 'Mali', cursive;
             color: #5c8065;
@@ -78,38 +76,33 @@
             border-color: #9cbfa7;
         }
 
-        /* The hidden calendar that only shows its icon */
-        input[type="date"] {
+        /* The emoji is now a fully clickable button */
+        .calendar-icon {
             position: absolute;
-            right: 10px;
+            right: 15px;
             top: 50%;
             transform: translateY(-50%);
-            width: 30px;
-            height: 30px;
-            border: none;
-            background: transparent;
-            color: transparent; /* Makes the date text invisible */
+            font-size: 22px;
             cursor: pointer;
-            outline: none;
+            transition: transform 0.2s;
         }
 
-        /* Forces the calendar icon to be clickable and visible */
-        input[type="date"]::-webkit-calendar-picker-indicator {
+        .calendar-icon:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        /* The actual native date picker is completely squished and hidden out of the way */
+        input[type="date"] {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-            opacity: 0.6; /* Softens the icon color a bit */
-            transition: opacity 0.2s;
+            width: 0;
+            height: 0;
+            border: none;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+            pointer-events: none;
         }
 
-        input[type="date"]::-webkit-calendar-picker-indicator:hover {
-            opacity: 1;
-        }
-
-        /* The Submit Button */
         button {
             padding: 12px 35px;
             font-size: 18px;
@@ -143,6 +136,9 @@
 
         <div class="input-wrapper">
             <input type="text" id="dateSelector" placeholder="e.g. 24 Feb 2026">
+            
+            <span class="calendar-icon" onclick="document.getElementById('calendarPicker').showPicker()">📅</span>
+            
             <input type="date" id="calendarPicker" onchange="syncDate()">
         </div>
         
@@ -150,7 +146,6 @@
     </div>
 
     <script>
-        // Formats the calendar selection to look pretty in the text box
         function syncDate() {
             const rawDate = document.getElementById('calendarPicker').value;
             if(rawDate) {
@@ -183,13 +178,13 @@
 
             switch(formattedDate) {
                 case '2024-11-18':
-                    window.location.href = 'siddhi.html'; 
+                    window.location.href = 'friend_1.html'; 
                     break;
                 case '2025-08-26':
-                    window.location.href = 'garima.html'; 
+                    window.location.href = 'friend_2.html'; 
                     break;
                 case '2026-02-24':
-                    window.location.href = 'shweta.html'; 
+                    window.location.href = 'siddhi.html'; 
                     break;
                 default:
                     window.location.href = 'default_gallery.html';
