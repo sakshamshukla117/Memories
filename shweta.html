@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Shweta 🌕</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Light pink background */
+        body {
+            font-family: 'Mali', cursive;
+            margin: 0;
+            padding: 20px;
+            background: radial-gradient(circle at top, #ffe6f0 0%, #FF99C5 100%);
+            color: #990033; /* Deep contrasting red text */
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        /* The main message box */
+        .message-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            width: 90%; 
+            box-sizing: border-box; 
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px solid #ff4d88; /* Bright red/pink border */
+            box-shadow: 0 8px 20px rgba(204, 0, 0, 0.15);
+            word-wrap: break-word; 
+        }
+
+        h1 {
+            color: #cc0000; /* Vibrant red for the heading */
+            margin-top: 0;
+        }
+
+        /* Grid for the photo gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Styling the individual photos */
+        .photo-card {
+            background-color: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(255, 102, 153, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: 2px solid #ffe6f0;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05) rotate(2deg);
+            border-color: #ff4d88;
+        }
+
+        .photo-card img {
+            width: 100%;
+            max-width: 200px;
+            height: 200px;
+            object-fit: cover; 
+            border-radius: 10px;
+        }
+
+        /* --- THE POP-UP (MODAL) STYLES --- */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(102, 0, 34, 0.7); /* Dark red-tinted dim background */
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            width: 85%;
+            max-width: 500px;
+            max-height: 80vh; 
+            overflow-y: auto; 
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            animation: popIn 0.3s ease-out;
+            border: 4px solid #ff4d88;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-img {
+            max-width: 100%;
+            max-height: 40vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .modal-text {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #990033; /* Deep red for the pop-up text */
+            font-weight: 600;
+        }
+
+        /* The 'X' to close the pop-up */
+        .close-btn {
+            position: sticky; 
+            top: 0;
+            float: right;
+            margin-bottom: 10px;
+            background-color: #cc0000;
+            color: white;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            font-size: 20px;
+            line-height: 33px;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 4px 10px rgba(204, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 10px 25px;
+            background-color: #ff4d88; /* Bright red/pink button */
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(255, 77, 136, 0.4);
+        }
+        
+        .back-btn:hover {
+            background-color: #e6005c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message-box">
+        <h1>To Shweta 🌕</h1>
+        <p>Heyeyyeyyyyy Shwetatatataaaaa<br><br>This is my way of expressing efforts i guess 🤔<br><br>Nonetheless, all the time that we've spent together, right from Ventilator Class to Today, i love it verryryryryyyy muchhhhhh.<br><br>This is a tribute/collection of those memories. Hope you like it :D<br><br>{Click on each photo}</p>
+    </div>
+
+    <div class="gallery">
+        
+        <div class="photo-card" onclick="openModal('resources/shweta/1.jpg', 'The FIRST time that we went out together. Obv we started small, Munshipulia. But this was the starting of a never ending ghummi deal ykykykykyk')">
+            <img src="resources/shweta/1.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/shweta/2.jpg', 'The Great Hazratganj Ghummi hehehehehhehe. When we walked across WHOLEEEEE Hazratganj, from Roastery (with iftaar party) to Snowberry where we ate 250 ke aadhe inch waffles >:[')">
+            <img src="resources/shweta/2.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/shweta/3.jpg', 'humara tejas ka ticket..... but its okay. Bad experiences make better memories right????? We had the time in auto, the railway station, AND THAT WEIRD SPRITE STEALING NIGG WTF. honestly, the best time {or 2nd best} time we have spent together :D')">
+            <img src="resources/shweta/3.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/shweta/4.jpg', 'Terms ke baad Goa jaana padega- OH WAIT, TERMS TO HO GAYEEEEEE. CHALEEEEE?????????????')">
+            <img src="resources/shweta/4.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/shweta/5.jpg', 'Us before sitting in the 3rd roller coaster of the day hehehehehehehehehehe')">
+            <img src="resources/shweta/5.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/shweta/6.jpg', 'Ngl, the best and sweetest ending to out 8 hour hangout, it was so fun and comforting. I loved everything right from bitching about the ABNORMALLY LESS quantity of fries to us being turned into Phospholipds heheheheheeh. it was the besttttttttt day ive ever had with you. i think we should do this more often 😈')">
+            <img src="resources/shweta/6.jpg" alt="A memory">
+        </div>
+        
+        </div>
+
+    <a href="index.html" class="back-btn">⬅ Back to the beginning</a>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal()">&times;</div>
+            <img id="popupImage" class="modal-img" src="" alt="Popup Photo">
+            <div id="popupText" class="modal-text"></div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSource, secretText) {
+            document.getElementById('popupImage').src = imageSource;
+            document.getElementById('popupText').innerText = secretText;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
