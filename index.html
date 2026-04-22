@@ -135,7 +135,7 @@
         <p>Type the date our journey started, or select it from the calendar! 🌿✨</p>
 
         <div class="input-wrapper">
-            <input type="text" id="dateSelector" placeholder="e.g. 24 Feb 2026">
+            <input type="text" id="dateSelector" placeholder="e.g. 1 Jan 2000">
             
             <span class="calendar-icon" onclick="document.getElementById('calendarPicker').showPicker()">📅</span>
             
@@ -166,7 +166,7 @@
             const parsedDate = new Date(rawInput);
             
             if (isNaN(parsedDate.getTime())) {
-                alert("Oops! I couldn't read that format. Try something like '24 Feb 2026' or use the calendar! 🌿");
+                alert("Oops! I couldn't read that format. Try something like '5 Nov 2006' or use the calendar! 🌿");
                 return;
             }
 
