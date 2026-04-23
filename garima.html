@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Garima ❤️</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Rich, beautiful red gradient background */
+        body {
+            font-family: 'Mali', cursive;
+            margin: 0;
+            padding: 20px;
+            background: radial-gradient(circle at top, #ff6666 0%, #990000 100%);
+            color: #4a0000; 
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        /* Main Message Box */
+        .message-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            max-width: 600px;
+            width: 90%; 
+            box-sizing: border-box; 
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 20px;
+            border: 4px dashed #ff4d4d; /* Cute dashed red border */
+            box-shadow: 0 10px 25px rgba(100, 0, 0, 0.4);
+            word-wrap: break-word; 
+        }
+
+        h1 {
+            color: #cc0000; /* Bright, vibrant red */
+            margin-top: 0;
+        }
+        
+        p {
+            color: #660000; /* Deep cherry red for easy reading */
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Gallery Setup */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Photo Cards */
+        .photo-card {
+            background-color: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: 2px solid #ffe6e6;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05) rotate(-2deg); /* Tilts slightly to the left this time! */
+            border-color: #ff4d4d;
+        }
+
+        .photo-card img {
+            width: 100%;
+            max-width: 200px;
+            height: 200px;
+            object-fit: cover; 
+            border-radius: 10px;
+        }
+
+        /* NEW: The P.S. Section Box */
+        .ps-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            max-width: 500px;
+            width: 85%;
+            margin: 40px auto; /* Placed cleanly below the gallery */
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px solid #ff9999;
+            box-shadow: 0 6px 15px rgba(100, 0, 0, 0.3);
+            font-style: italic;
+        }
+
+        /* --- THE POP-UP (MODAL) STYLES --- */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(60, 0, 0, 0.8); /* Dark red dimming */
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            width: 85%;
+            max-width: 500px;
+            max-height: 80vh; 
+            overflow-y: auto; 
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            animation: popIn 0.3s ease-out;
+            border: 4px solid #ff4d4d;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-img {
+            max-width: 100%;
+            max-height: 40vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .modal-text {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #660000;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            position: sticky; 
+            top: 0;
+            float: right;
+            margin-bottom: 10px;
+            background-color: #cc0000;
+            color: white;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            font-size: 20px;
+            line-height: 33px;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 4px 10px rgba(150, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        /* Button Styling */
+        .back-btn {
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            padding: 12px 30px;
+            background-color: white;
+            color: #cc0000;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 4px 10px rgba(100, 0, 0, 0.4);
+            border: 2px solid white;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            background-color: #ffe6e6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message-box">
+        <h1>To Garima ❤️</h1>
+        <p>I know things haven't really been very ideal between us. But that doesn't mean you dont deserve this heheheheehe<br><br>Here is a little SOMETHING that I made for you.<br><br>Thank you for everything, staying by my side, tolerating my tantrums and RR, scolding me when i was wrong, laughing with me, crying with me everytime i was sad.<br><br>I know i've hurt you a lot. And i wish i could make that up to you.<br><br>This however, isnt to make it up to you, its because youre special to me and you deserve to feel special meri jaan<br>Thank you for everything.<br><br>{Click on every image btw}</p>
+    </div>
+
+    <div class="gallery">
+        
+        <div class="photo-card" onclick="openModal('resources/garima/1.jpg', 'The FIRST day of our life that made sure we are destined to meet. It was one of the happiest days of our lives right? NEET jaise exam ko pel diya humne hehehehehehe, we are the absolute best. This was the beginning, the Primitive Streak/Prochordal Plate of our future.')">
+            <img src="resources/garima/1.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/2.jpg', '15 September 2025, Siddhi ka bday. We met in real life as friends for the FIRST time, at Aryas Place. I still remember how you put her gloss on my lips, and how she carefully instructed you to not put it on my lips as i might have Herpes 💀. Maine tumhare haatho me Medhak 🐸 utha ke diya tha. It was the foundation of a bond destined for Lifelong Masti 😈')">
+            <img src="resources/garima/2.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/3.jpg', 'The day we (i) came to your place. Remember all the masti we did? We thought hum log board games khelenge but we ended doing ONLY masti together. Then you were Pranavs gynaecologist and a cute little Penguin 🐧 was born 🤗')">
+            <img src="resources/garima/3.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/4.jpg', 'PINK KURTI WALI LADKI- obviously, tum chahe pink kurti pehno ya black ya blue, SLAY TO HUMESHA KARTI. Remember the time during practice jab meri pocket se Vicks eject out ho gayi thi, and Kavya boss was giving you a look 😭 Humara college hai jhaantu, but memories acchi banwata hai 😋')">
+            <img src="resources/garima/4.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/5.jpg', 'The first time we travelled by Train together. Gomti bkl itna late kara di thi, 1 baj gaya tha hum log ko. But naahhhhhh, it was fun. Accha khasa gaane sunte hue, masti karte hue gaye the. It was a veryyyyyyyyy pyaari journey. Would 10/10 recommend it again heheheh 😋')">
+            <img src="resources/garima/5.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/6.jpg', 'Jab Tarang me hum dono awkward ho rahe the photo ke pose ke liye. Siddhi clicked this picture in a burst of pictures, but this one is my favorite. We look SOOOOOOOOOOOOOOOOOOOOOOOOOO cute hehehehehhe. iss photo ko to frame kara lu mai 🥰 Tarang was fun yaar, treasure hunt and shit. (Some part of it wasnt fun, but thats ok. We focus on the bright side of shit.)')">
+            <img src="resources/garima/6.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/7.jpg', 'Jab hum log pehli baar JK Temple gaye the, aur Pink Kurti wali ladki ab White Kurti me slay kar rahi thi. I was sooooooo happy to click your pictures that day. Itni sundar lag rahi thi. As if wahi mandir se bhagwan ki moorti se nikal ke aayi ho. AND PHIR HUM LOG JHOOLE PE GAYE THEEEE HEHEHEHEHEEHHEHEHE')">
+            <img src="resources/garima/7.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/8.jpg', 'Dr. Garima Bajpai, on her way to deliver a sexy, slaying speech, about how the Human Body works hehehehe. Ek din Seminar hoga aur tum genuinely aise bologi, Maza hi aa jayega 😋🩺')">
+            <img src="resources/garima/8.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/9.jpg', 'Jab hum Vaidyam gaye the aur aap Anal se baat karte karte ITNA ULTRA CUTE ADORABLE PYAARA PERICARDIOMELTING POSE hit kari 🌚 Sundar itni ho, Photo ek nahi khichati 🔪')">
+            <img src="resources/garima/9.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/10.jpg', 'Yeah you when GSVM or Padhai 😔')">
+            <img src="resources/garima/10.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/11.jpg', 'Siddhi maam ki baat to aise sun ke muskura rahi jaise pata nahi kaunsi baat ho 🌚 (Baat Kangna ki ho rahi hai). Hum NBRI ghoome the, tumne wo Gate ke around jaane wali video banwayi thi hehehhehe, phir humne South Indian Maal khaya tha. Hume phir kahi aise ghoomne jaana chahiye cutie 🤗')">
+            <img src="resources/garima/11.jpg" alt="A memory">
+        </div>
+
+        <div class="photo-card" onclick="openModal('resources/garima/12.jpg', 'When we went to Pranav ke ghar and we had SHIT TONSSSSSSSS of masti. I remember how we were clicking this photo and peeche se Jay Bhaiya aur unke dost aa gaye the and we were so spooked 😭 YAAR AISE DIN PHIRSE CHAHIYE MUJHE YAAAAAAAAWWWWWWWWWWRRRRRRRRRRR 😢😢 But nonetheless, this is also one of our core memories 😋')">
+            <img src="resources/garima/12.jpg" alt="A memory">
+        </div>
+
+    </div>
+
+    <div class="ps-box">
+        <p><strong>P.S.</strong> I'm sorry but i didn't much 'non relationship' photos :')<br>I just hope I didnt make you uncomfortable by anything. If i did, i am really sorry.<br>I made this just because you're a very pyaari insaan and 100000000000/10 very special to me.<br><br>MMWWWWWAAAAAAAAAHHHHHHHHHHHHHHHHHH 💋💋</p>
+    </div>
+
+    <a href="index.html" class="back-btn">⬅ Back to the beginning</a>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal()">&times;</div>
+            <img id="popupImage" class="modal-img" src="" alt="Popup Photo">
+            <div id="popupText" class="modal-text"></div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSource, secretText) {
+            document.getElementById('popupImage').src = imageSource;
+            document.getElementById('popupText').innerText = secretText;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
